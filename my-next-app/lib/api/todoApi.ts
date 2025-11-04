@@ -1,12 +1,6 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
+import { Todo, TodoUpdate } from '@/lib/types/todo';
 
-export interface Todo {
-    id: number;
-    text: string;
-    completed: boolean;
-    createdAt: string;
-    updatedAt: string;
-}
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '/api';
 
 class TodoApiService {
     private baseUrl: string;
@@ -47,7 +41,7 @@ class TodoApiService {
         }
     }
 
-    async updateTodo(id: number, updates: { text?: string; completed?: boolean }): Promise<Todo> {
+    async updateTodo(id: number, updates: TodoUpdate): Promise<Todo> {
         try {
             const response = await fetch(`${this.baseUrl}/todos/${id}`, {
                 method: 'PUT',
@@ -96,4 +90,3 @@ class TodoApiService {
 }
 
 export default new TodoApiService();
-

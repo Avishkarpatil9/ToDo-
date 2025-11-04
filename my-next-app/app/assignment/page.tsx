@@ -1,9 +1,9 @@
-import CounterAssignment from "./components/ToDoAssignment";
+import TodoApp from "./components/TodoApp";
 
 export default function Assignment() {
   return (
     <>
-      <CounterAssignment />
+      <TodoApp />
     </>
   );
 }
