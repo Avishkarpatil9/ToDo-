@@ -1,0 +1,39 @@
+Assignment: Counter Component (TypeScript + Tailwind)
+Context
+    You’re building a reusable Counter UI for a training app. The component must be implemented in React + TypeScript and styled using Tailwind CSS. 
+    The counter supports an interval prop to control the step size and enforces an action limit of 10 clicks (increment or decrement combined). 
+    After the limit, the counter disables increment/decrement and enables Reset.
+
+Core Requirements
+
+    State & Props
+        Internal state: count: number, flag: boolean (true when action limit reached).
+        Prop: interval?: number (default 1).
+
+    Behavior
+        Increment/Decrement change count by interval.
+        Track total clicks (inc + dec). When clicks > 9, set flag to true and disable inc/dec buttons.
+        Reset sets count to 0, resets click count to 0, and sets flag to false.
+
+    Accessibility
+        Buttons must have accessible labels.
+        Focus states must be visible.
+
+    TypeScript
+        Strongly type props and state. Avoid any.
+
+    Styling
+        Use Tailwind CSS.
+        Create a clean, responsive “card” UI with:
+            Title header
+            Read-only count display
+            Three controls: +, −, Reset
+            A subtle progress bar (0–10) for the action limit
+            A small badge showing the current step (interval)
+
+Acceptance Criteria
+    Incrementing and decrementing changes the value by interval.
+    After 10 total actions, + and − disable; Reset enables.
+    Reset returns the UI to the initial state and re-enables +/−.
+    Component renders correctly in both default and interval={10} variants.
+    UI is visually tidy, responsive, and keyboard-accessible.
